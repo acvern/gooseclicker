@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<!-- Site created by Alvern Chen. Contact through alvernchen@gmail.com. -->
+
+<html>
+    <head>
+        <meta property="og:image" content="http://i.imgur.com/6M6cGB7.png" />
+	<link rel="icon" type="favicon/ico" href="https://www.blogger.com/favicon-image.g?blogID=8180955075875423877">
+    </head>
+
+    <style>
+        
+        html 
+        {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background: #427ea3;
+            font-family: "Tahoma", sans-serif, Geneva, sans-serif;
+            color: #25465b;
+        }
+
+        hr {
+            color: #25465b;
+            width = 80%;
+        }
+
+        ol{
+            list-style-type: cjk-ideographic;
+            line-height: 1.5em;
+        }
+        
+        p{
+            line-height: 1.5em;
+        }
+        
+        pre{
+            color: #ffffff;
+            background: #25465b;
+        }
+        
+        ul{
+            line-height: 1.5em;
+        }
+        
+        .container {
+            margin: 10px;
+            margin-left: 245px;
+            background: #ffffff;
+            padding: 20px;
+            padding-top: 5px;
+        }
+
+        .contentBar {
+            width: 200px;
+            position: fixed;
+            background: #ffffff;
+            padding-left: 20px;
+            padding-top: 15px;
+            padding-bottom: 0px;
+            left: 15px;
+            top: 10px;
+			bottom: 50px;
+			overflow: auto;
+        }
+        
+		.footer{
+			position: fixed;
+			color: #25465b;
+			left: 15px;
+			bottom: 0;
+			width: 200px;
+			font-size: 10px;
+			text-align: center;
+        }
+		
+		.buyButton, .clickButton{
+			background: #25465b;
+			color: #ffffff;
+            text-align: center;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 5px;
+		}
+		
+		.buyButton{
+			height: 40px;
+            width: 160px;
+            font-size: 10px;
+        }
+		
+		.buyBuildings{
+			overflow: hidden;
+		}
+		
+		.clickButton{
+			height: 40px;
+            width: 80px;
+            font-size: 16px;
+		}
+
+    </style>
+    
+    <body>
+    
+    <title> Goose Clicker </title>
+    
+    <div class = "footer">
+        <p> By Alvern Chen, 2016. </p>
+    </div>
+    
+    <div class = "contentBar">
+        <img src = "http://i.imgur.com/6M6cGB7.png" width="180" height = "159"></img>
+		<p> <div id = "geese"> Geese: 0 </div> </p>
+        <p> <div id = "gps"> Geese/second: 0 </div> </p>
+		<hr></hr>
+		<div id = "mainBuildings" class = "buyBuildings">
+		</div>
+    </div>
+
+    <div class = "container">
+
+        <div id = "top"> <h1> Goose Clicker </h1> </div>
+        
+        <hr></hr>
+        
+        <p> Click button, receive geese </p>
+        
+        
+        <div class = "clickButton" onclick = "incrementClick()"> Click </div>
+
+	</div>	
+    
+    </body>
+
+<script src = "geese.js"></script>
+	
+</html>
