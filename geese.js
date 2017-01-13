@@ -1,9 +1,8 @@
 /*
-	Goose Clicker v0.1
+	Goose Clicker v0.2a
 	Author: Alvern Chen
-	Last modified: January 6, 2017
-	TODO: 	Play with style some more until I get it clean and scalable.
-			Something about the indentation in the buyButtons.
+	Last modified: January 13, 2017
+	TODO: 	Implement upgrades and save functions
 */
 
 // Initialize global variables
@@ -27,6 +26,7 @@ const MOTHERGOOSE = 1;
 const DRAKE = 2;
 const UNIVERSITYOFWATERFOWL = 3;
 
+
 // Function to create a new building
 function newBuilding(name, id, cost, baseValue) {
 	buildings[id] = {count: 0, name: name, cost: cost, value: baseValue,
@@ -40,11 +40,14 @@ function incrementClick() {
 	updateStats();
 }
 
-function incrementTime() {
-	totalGeese += geesePerSecond;
-	geese += geesePerSecond;
+// Updating function that scales with time
+function incrementTime(speed) {
+	var increment = speed/1000 * geesePerSecond;
+	totalGeese += increment;
+	geese += increment;
 }
 
+// Run this when buying an item
 function buy(id) {
 	if (geese >= buildings[id].cost * buyAmount) {
 		geese -= buildings[id].cost * buyAmount;
@@ -67,21 +70,6 @@ function newBuy(id) {
 	"Cost: " + buildings[id].cost + "<br>" +
 	"Count: " + buildings[id].count;
 	
-	/*
-	var nameLine = document.createTextNode(buildings[id].name);
-	
-	var costLine = document.createTextNode("Cost: " + buildings[id].cost);
-		
-	var countLine = document.createTextNode("Count: " + buildings[id].count);
-	
-	buyButton.appendChild(nameLine);
-	buyButton.appendChild(document.createElement("br"));
-	buyButton.appendChild(costLine);
-	buyButton.appendChild(document.createElement("br"));
-	buyButton.appendChild(countLine);
-	
-	*/
-	
 	return buyButton;
 }
 
@@ -96,7 +84,7 @@ function getGPS() {
 }
 
 function updateStats() {
-	document.getElementById("geese").innerHTML = "Geese: " + geese;
+	document.getElementById("geese").innerHTML = "Geese: " + Math.floor(geese);
 	document.getElementById("gps").innerHTML = 
 	"Geese/second: " + geesePerSecond;
 }
@@ -108,8 +96,8 @@ function updateButton(id) {
 	"Count: " + buildings[id].count;
 }
 
-function update() {
-	incrementTime();
+function update(speed) {
+	incrementTime(speed);
 	updateStats();
 }
 
@@ -128,7 +116,7 @@ function init() {
 	updateStats();
 }
 
-var main = setInterval(function() { update() }, 1000);
+var main = setInterval(function() { update(100) }, 100);
 
 window.onload = init();
 

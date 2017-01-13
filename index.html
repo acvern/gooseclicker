@@ -51,7 +51,7 @@
         
         .container {
             margin: 10px;
-            margin-left: 245px;
+            margin-left: 265px;
             background: #ffffff;
             padding: 20px;
             padding-top: 5px;
@@ -62,12 +62,14 @@
             position: fixed;
             background: #ffffff;
             padding-left: 20px;
+			padding-right: 20px;
             padding-top: 15px;
             padding-bottom: 0px;
             left: 15px;
             top: 10px;
 			bottom: 50px;
-			overflow: auto;
+			overflow-y: scroll;
+			overflow-x: hidden;
         }
         
 		.footer{
@@ -89,16 +91,23 @@
 			justify-content: center;
 			align-items: center;
 			padding: 5px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-khtml-user-select: none;
+			-ms-user-select: none;
+
 		}
 		
 		.buyButton{
 			height: 40px;
             width: 160px;
             font-size: 10px;
+			margin: 0 auto;
         }
 		
 		.buyBuildings{
 			overflow: hidden;
+			top: 5px;
 		}
 		
 		.clickButton{
