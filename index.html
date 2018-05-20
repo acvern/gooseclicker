@@ -21,28 +21,19 @@
         }
 
         body {
-            background: #427ea3;
+			background: #565a5c;
+            //background: #427ea3;
             font-family: "Tahoma", sans-serif, Geneva, sans-serif;
-            color: #25465b;
+            //color: #25465b;
+			color: white;
         }
 
         hr {
-            color: #25465b;
             width = 80%;
-        }
-
-        ol{
-            list-style-type: cjk-ideographic;
-            line-height: 1.5em;
         }
         
         p{
             line-height: 1.5em;
-        }
-        
-        pre{
-            color: #ffffff;
-            background: #25465b;
         }
         
         ul{
@@ -52,7 +43,7 @@
         .container {
             margin: 10px;
             margin-left: 265px;
-            background: #ffffff;
+            background: black;
             padding: 20px;
             padding-top: 5px;
         }
@@ -60,7 +51,7 @@
         .contentBar {
             width: 200px;
             position: fixed;
-            background: #ffffff;
+            background: black;
             padding-left: 20px;
 			padding-right: 20px;
             padding-top: 15px;
@@ -68,13 +59,13 @@
             left: 15px;
             top: 10px;
 			bottom: 50px;
-			overflow-y: scroll;
-			overflow-x: hidden;
+			//overflow-y: scroll;
+			//overflow-x: hidden;
         }
         
 		.footer{
 			position: fixed;
-			color: #25465b;
+			color: #FCD450;
 			left: 15px;
 			bottom: 0;
 			width: 200px;
@@ -82,10 +73,11 @@
 			text-align: center;
         }
 		
-		.buyButton, .clickButton{
-			background: #25465b;
-			color: #ffffff;
-            text-align: center;
+		.buyButton, .clickButton {
+			border: 1px solid #FCD450;
+			//border: 1px solid black;
+			color: #FCD450;
+			text-align: center;
 			cursor: pointer;
 			display: flex;
 			justify-content: center;
@@ -95,7 +87,6 @@
 			-moz-user-select: none;
 			-khtml-user-select: none;
 			-ms-user-select: none;
-
 		}
 		
 		.buyButton{
@@ -123,25 +114,26 @@
     <title> Goose Clicker </title>
     
     <div class = "footer">
-        <p> By Alvern Chen, 2016. </p>
+        <p> By Alvern Chen, 2017. </p>
     </div>
     
     <div class = "contentBar">
-        <img src = "http://i.imgur.com/6M6cGB7.png" width="180" height = "159"></img>
-		<p> <div id = "geese"> Geese: 0 </div> </p>
-        <p> <div id = "gps"> Geese/second: 0 </div> </p>
+        <!-- <img src = "http://i.imgur.com/6M6cGB7.png" width="180" height = "159"></img> !-->
+		<p> <div id = "feathers"> Feathers: 0 </div> </p>
+        <p> <div id = "fps"> Feathers/second: 0 </div> </p>
 		<hr></hr>
+		<br style = "line-height: 2.5em;">
 		<div id = "mainBuildings" class = "buyBuildings">
 		</div>
     </div>
 
     <div class = "container">
 
-        <div id = "top"> <h1> Goose Clicker </h1> </div>
+        <div id = "top"> <h1 style="color:white;"> Goose Clicker </h1> </div>
         
         <hr></hr>
         
-        <p> Click button, receive geese </p>
+        <p> Click button to receive feathers. </p>
         
         
         <div class = "clickButton" onclick = "incrementClick()"> Click </div>
